@@ -9,4 +9,4 @@ Static personal portfolio for GitHub Pages.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Select the `dev` branch and `/ (root)` folder, then save.
 
-GitHub will publish the site at `https://kenshiro-sky.github.io/<repository-name>/`.
+GitHub will publish the site at `https://kenshiro-me.github.io/<repository-name>/`.
