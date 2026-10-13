@@ -145,7 +145,7 @@ to{opacity:1;transform:translateY(0) scale(1)}
 .project.feature{grid-row:auto;min-height:450px}
 .stack-grid{grid-template-columns:1fr 1fr}
 .contact{padding-top:100px;padding-bottom:90px}
-.finale{min-height:690px;padding-top:65px;padding-bottom:42px}.finale-copy{padding-top:112px}.finale h2{font-size:clamp(47px,13vw,76px);line-height:.88}.finale-hud .hud-icon{width:calc(var(--size) * .68);opacity:.55}.continue{margin-top:58px}
+.finale{min-height:690px;padding-top:65px;padding-bottom:42px}.finale-copy{padding-top:112px}.finale h2{font-size:clamp(47px,13vw,76px);line-height:.88}.finale-hud .hud-icon{width:clamp(24px,8vw,38px)!important;height:clamp(24px,8vw,38px)!important;max-width:38px!important;opacity:.48}.continue{margin-top:58px}
 .launch-scene{right:-90px;bottom:-105px;transform:scale(.68);transform-origin:bottom right}
 footer{display:block}
 footer div{margin-top:15px;gap:13px;flex-wrap:wrap}
