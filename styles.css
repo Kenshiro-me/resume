@@ -77,10 +77,17 @@ nav a:hover,footer a:hover{color:var(--aqua);transform:translateY(-2px)}
 .stack-grid div{padding:22px;border:1px solid var(--line);border-left:0;min-height:138px}
 .stack-grid p{margin:0 0 20px}
 .stack-grid strong{font-size:15px;font-weight:500}
-.contact{padding-top:170px;padding-bottom:120px}
+.contact{padding-top:170px;padding-bottom:120px;position:relative;overflow:hidden}
 .contact h2{font-size:clamp(52px,7vw,98px);line-height:.96;letter-spacing:-.07em;margin:16px 0 44px}
 .contact-link{font-size:clamp(18px,2.3vw,32px);color:var(--ink);text-underline-offset:8px}
 .contact-link span{color:var(--aqua)}
+.launch-scene{position:absolute;right:4%;bottom:-88px;width:310px;height:255px;pointer-events:none;opacity:.9}
+.launch-scene:before,.launch-scene:after{content:"";position:absolute;inset:30px;border:1px solid rgba(154,255,223,.19);border-radius:50%;transform:rotateX(63deg);animation:orbit 8s linear infinite}
+.launch-scene:after{inset:5px;border-color:rgba(85,114,255,.22);animation-direction:reverse;animation-duration:11s}
+.core-node{position:absolute;left:50%;top:50%;width:88px;height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;transform:translate(-50%,-50%) rotate(45deg);border:1px solid var(--aqua);background:rgba(7,29,28,.72);box-shadow:0 0 45px rgba(154,255,223,.17);animation:node-pulse 2.6s ease-in-out infinite}
+.core-node>*{transform:rotate(-45deg)}
+.core-node span,.core-node i{font:8px "DM Mono",monospace;color:var(--aqua);font-style:normal;letter-spacing:.08em}.core-node b{font-size:22px;color:var(--aqua)}
+.fragment{position:absolute;width:12px;height:5px;background:var(--aqua);box-shadow:0 0 12px currentColor;transform:rotate(var(--r));animation:fragment 4.5s var(--d) ease-in-out infinite}.f1{left:4%;top:25%;--r:28deg;--d:-1s}.f2{left:17%;top:69%;width:22px;background:#596bff;--r:-42deg;--d:-2.4s}.f3{right:8%;top:17%;height:10px;--r:72deg;--d:-.4s}.f4{right:2%;bottom:28%;width:18px;background:#596bff;--r:-15deg;--d:-3.2s}.f5{left:31%;top:4%;--r:112deg;--d:-1.8s}.f6{right:31%;bottom:4%;width:6px;height:16px;--r:18deg;--d:-.8s}.f7{left:0;bottom:20%;background:#596bff;--r:60deg;--d:-2.7s}.f8{right:22%;top:43%;--r:-71deg;--d:-1.2s}.f9{left:47%;bottom:2%;height:14px;--r:40deg;--d:-3.8s}.f10{right:44%;top:2%;background:#596bff;--r:-18deg;--d:-2s}
 footer{border-top:1px solid var(--line);padding-top:22px;padding-bottom:30px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
 footer div{display:flex;gap:20px}
 footer a{font:10px "DM Mono",monospace;color:var(--muted)}
@@ -103,6 +110,9 @@ to{opacity:1;transform:translateY(0) scale(1)}
 }
 @keyframes scanner{0%,100%{transform:translateY(0);opacity:0}12%,78%{opacity:.45}88%{transform:translateY(710px);opacity:0}
 }
+@keyframes orbit{to{transform:rotateX(63deg) rotateZ(360deg)}}
+@keyframes node-pulse{50%{box-shadow:0 0 80px rgba(154,255,223,.42);filter:brightness(1.35)}}
+@keyframes fragment{0%,100%{translate:0 0;opacity:.25}50%{translate:var(--x,9px) -18px;opacity:1}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
 }
 @media(max-width:1050px){.top-links{display:none}
@@ -124,6 +134,7 @@ to{opacity:1;transform:translateY(0) scale(1)}
 .project.feature{grid-row:auto;min-height:450px}
 .stack-grid{grid-template-columns:1fr 1fr}
 .contact{padding-top:100px;padding-bottom:90px}
+.launch-scene{right:-90px;bottom:-105px;transform:scale(.68);transform-origin:bottom right}
 footer{display:block}
 footer div{margin-top:15px;gap:13px;flex-wrap:wrap}
 .hero-actions{flex-wrap:wrap}
