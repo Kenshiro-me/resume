@@ -30,6 +30,7 @@ nav a:hover,footer a:hover{color:var(--aqua);transform:translateY(-2px)}
 .hero h1{font-size:clamp(48px,7.1vw,102px);line-height:.96;letter-spacing:-.075em;margin:20px 0 0;font-weight:600;animation:rise .8s .25s both}
 .hero h1 em,.contact h2 em{font-family:Georgia,serif;font-weight:400;color:var(--aqua)}
 .intro{width:340px;margin-bottom:8px;color:var(--muted);font-size:16px;animation:rise .8s .45s both}
+.hire-note{font:10px "DM Mono",monospace!important;letter-spacing:.06em;color:var(--aqua)!important;margin:18px 0 -8px!important}
 .hero-actions{display:flex;gap:12px;margin-top:28px}
 .button{font:500 13px "DM Mono",monospace;text-decoration:none;padding:13px 16px;white-space:nowrap;transition:transform .2s,box-shadow .2s}
 .button:hover{transform:translateY(-3px);box-shadow:0 7px 25px rgba(154,255,223,.15)}
@@ -81,6 +82,12 @@ nav a:hover,footer a:hover{color:var(--aqua);transform:translateY(-2px)}
 .contact h2{font-size:clamp(52px,7vw,98px);line-height:.96;letter-spacing:-.07em;margin:16px 0 44px}
 .contact-link{font-size:clamp(18px,2.3vw,32px);color:var(--ink);text-underline-offset:8px}
 .contact-link span{color:var(--aqua)}
+.finale{min-height:760px;padding-top:96px;padding-bottom:66px;background:#040b0b;border:1px solid var(--line);isolation:isolate}
+.finale-backdrop{position:absolute;inset:0;z-index:-3;background:radial-gradient(circle at 50% 48%,rgba(27,104,91,.26),transparent 34%),radial-gradient(circle at 82% 20%,rgba(27,66,128,.18),transparent 26%),linear-gradient(90deg,rgba(2,9,9,.96),rgba(2,9,9,.53) 58%,rgba(2,9,9,.9));opacity:.94}
+.finale-backdrop:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(154,255,223,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(154,255,223,.08) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(90deg,#000,transparent 76%)}
+.finale-copy{position:relative;z-index:3;max-width:980px;margin:auto;text-align:center;padding-top:145px}
+.finale .eyebrow{margin:0 0 22px}.finale h2{font-size:clamp(54px,8vw,118px);line-height:.83;letter-spacing:-.08em;margin:0 0 42px;text-wrap:balance}.finale h2 em{font-style:normal;color:var(--ink);-webkit-text-stroke:1px var(--aqua);color:transparent}.finale .contact-link{position:relative;z-index:4;display:inline-block;margin-top:15px;font:14px "DM Mono",monospace;color:var(--aqua);text-decoration:none;border-bottom:1px solid rgba(154,255,223,.55);padding-bottom:8px}.continue{font:10px "DM Mono",monospace;letter-spacing:.12em;color:var(--muted);margin:86px 0 0}.continue span{color:var(--aqua);margin-left:8px;display:inline-block;animation:bob 1.4s ease-in-out infinite}
+.finale-hud{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}.finale-hud .hud-icon{position:absolute;left:var(--x);top:var(--y);width:var(--size);aspect-ratio:1;object-fit:cover;border:1px solid rgba(154,255,223,.38);border-radius:50%;box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 23px rgba(154,255,223,.12);animation:drift-up var(--duration) var(--delay) linear infinite}
 .launch-scene{position:absolute;right:4%;bottom:-88px;width:310px;height:255px;pointer-events:none;opacity:.9}
 .launch-scene:before,.launch-scene:after{content:"";position:absolute;inset:30px;border:1px solid rgba(154,255,223,.19);border-radius:50%;transform:rotateX(63deg);animation:orbit 8s linear infinite}
 .launch-scene:after{inset:5px;border-color:rgba(85,114,255,.22);animation-direction:reverse;animation-duration:11s}
@@ -113,6 +120,10 @@ to{opacity:1;transform:translateY(0) scale(1)}
 @keyframes orbit{to{transform:rotateX(63deg) rotateZ(360deg)}}
 @keyframes node-pulse{50%{box-shadow:0 0 80px rgba(154,255,223,.42);filter:brightness(1.35)}}
 @keyframes fragment{0%,100%{translate:0 0;opacity:.25}50%{translate:var(--x,9px) -18px;opacity:1}}
+@keyframes avatar-in{from{opacity:0;transform:translateY(50px) rotate(2deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes avatar-float{50%{translate:0 -11px}}
+@keyframes hud-float{50%{translate:0 -16px;rotate:2deg}}
+@keyframes drift-up{0%{transform:translate3d(0,0,0) rotate(-8deg);opacity:0}8%,84%{opacity:.75}100%{transform:translate3d(24px,-910px,0) rotate(14deg);opacity:0}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
 }
 @media(max-width:1050px){.top-links{display:none}
@@ -134,6 +145,7 @@ to{opacity:1;transform:translateY(0) scale(1)}
 .project.feature{grid-row:auto;min-height:450px}
 .stack-grid{grid-template-columns:1fr 1fr}
 .contact{padding-top:100px;padding-bottom:90px}
+.finale{min-height:690px;padding-top:65px;padding-bottom:42px}.finale-copy{padding-top:112px}.finale h2{font-size:clamp(47px,13vw,76px);line-height:.88}.finale-hud .hud-icon{width:calc(var(--size) * .68);opacity:.55}.continue{margin-top:58px}
 .launch-scene{right:-90px;bottom:-105px;transform:scale(.68);transform-origin:bottom right}
 footer{display:block}
 footer div{margin-top:15px;gap:13px;flex-wrap:wrap}

@@ -17,3 +17,15 @@ const observer = new IntersectionObserver(
 );
 
 animatedItems.forEach((item) => observer.observe(item));
+
+// Duplicate every supplied technology icon with a distinct path to form a dense, continuous upward stream.
+document.querySelectorAll(".finale-hud .hud-icon").forEach((icon, index) => {
+  const echo = icon.cloneNode(true);
+  echo.classList.add("hud-echo");
+  echo.style.setProperty("--x", `${(index * 17 + 9) % 94}%`);
+  echo.style.setProperty("--y", `${91 + (index * 9) % 26}%`);
+  echo.style.setProperty("--size", `${48 + (index * 11) % 37}px`);
+  echo.style.setProperty("--delay", `${-(index * 1.37 + 2)}s`);
+  echo.style.setProperty("--duration", `${13 + (index % 7)}s`);
+  icon.parentElement.appendChild(echo);
+});
